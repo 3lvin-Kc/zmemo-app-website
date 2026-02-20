@@ -148,7 +148,7 @@ export const LandingPage: React.FC = () => {
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-display leading-tight">
                 Your emails.<br/>
-                <span className="text-gray-500">Searchable. Private. Secure.</span>
+                <span className="text-gray-500"><span className="bg-yellow-200 px-2 py-1 rounded-md">Searchable</span>. <span className="bg-blue-200 px-2 py-1 rounded-md">Private</span>. <span className="bg-green-200 px-2 py-1 rounded-md">Secure</span>.</span>
               </h1>
             </FadeIn>
 
@@ -200,7 +200,7 @@ export const LandingPage: React.FC = () => {
           <div className="order-1 lg:order-2">
             <FadeIn delay={200}>
               <div className="relative max-w-xs mx-auto">
-                <div className="absolute -inset-2 bg-gray-100 rounded-xl" />
+                <div className="absolute -inset-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl" />
                 <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-lg">
                   <img 
                     src="/zmemo.jpg" 
