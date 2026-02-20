@@ -198,18 +198,13 @@ export const LandingPage: React.FC = () => {
 
           {/* Right - Hero Image */}
           <div className="order-1 lg:order-2">
-            <FadeIn delay={200}>
-              <div className="relative max-w-xs mx-auto">
-                <div className="absolute -inset-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl" />
-                <div className="relative rounded-lg overflow-hidden border border-gray-200 shadow-lg">
-                  <img 
-                    src="/zmemo.jpg" 
-                    alt="Zmemo App Interface" 
-                    className="w-full h-auto"
-                  />
-                </div>
-              </div>
-            </FadeIn>
+            <div className="relative max-w-xs mx-auto">
+              <img 
+                src="/zmemo.jpg" 
+                alt="Zmemo App Interface" 
+                className="w-full h-auto"
+              />
+            </div>
           </div>
         </div>
       </header>
