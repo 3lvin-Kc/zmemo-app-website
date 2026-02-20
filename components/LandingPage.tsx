@@ -104,9 +104,7 @@ export const LandingPage: React.FC = () => {
 
           <div className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-            <a href="#how-it-works" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">How it works</a>
-            <a href="#download" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">Download</a>
-          </div>
+            </div>
 
           <div className="flex items-center gap-4">
             <button className="hidden md:flex items-center gap-2 bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors">
@@ -182,9 +180,7 @@ export const LandingPage: React.FC = () => {
                 <span className="flex items-center gap-1.5">
                   <Server size={14} /> Zero cloud
                 </span>
-                <span className="flex items-center gap-1.5">
-                  <Shield size={14} /> Open source
-                </span>
+                
                 <span className="flex items-center gap-1.5">
                   <WifiOff size={14} /> Offline-first
                 </span>
@@ -218,92 +214,97 @@ export const LandingPage: React.FC = () => {
         </div>
       </header>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 px-6 md:px-12 max-w-6xl mx-auto">
-        <FadeIn>
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-display">
-              Built for privacy.
-            </h2>
-            <p className="text-gray-600 max-w-lg mx-auto">
-              Everything you need to search your email archive securely.
-            </p>
+          {/* App Desktop Window UI */}
+          <div className="relative max-w-5xl mx-auto mt-16">
+             <div className="bg-white rounded-xl border border-zinc-200 shadow-2xl shadow-zinc-200/50 overflow-hidden">
+                {/* Window Controls */}
+                <div className="h-10 bg-zinc-50 border-b border-zinc-200 flex items-center px-4 gap-2">
+                    <div className="flex gap-2">
+                        <div className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E]"/>
+                        <div className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123]"/>
+                        <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]"/>
+                    </div>
+                    <div className="flex-1 text-center text-xs font-medium text-zinc-400">Zmemo — Desktop</div>
+                </div>
+
+                {/* Window Content */}
+                <div className="p-6 bg-white min-h-[400px]">
+                   <img 
+                       src="/image.png" 
+                       alt="Zmemo App Interface" 
+                       className="w-full h-auto object-contain"
+                   />
+                </div>
+             </div>
           </div>
-        </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          <FeatureCard
-            icon={<Zap size={24} />}
-            title="Lightning Fast"
-            description="Search through 100,000+ emails in milliseconds."
-            delay={100}
-          />
-          <FeatureCard
-            icon={<Shield size={24} />}
-            title="Complete Privacy"
-            description="Your emails are indexed locally. Zero data leaves your machine."
-            delay={150}
-          />
-          <FeatureCard
-            icon={<WifiOff size={24} />}
-            title="Air-Gapped Ready"
-            description="Works completely disconnected. Perfect for sensitive environments."
-            delay={200}
-          />
-          <FeatureCard
-            icon={<HardDrive size={24} />}
-            title="Universal Import"
-            description="Import from Gmail, Outlook, Thunderbird, Maildir, and MBOX."
-            delay={250}
-          />
-          <FeatureCard
-            icon={<Database size={24} />}
-            title="Local Storage"
-            description="All data stays on your device. Optional local encryption."
-            delay={300}
-          />
-          <FeatureCard
-            icon={<Search size={24} />}
-            title="Powerful Search"
-            description="Full-text search with filters. Find any email instantly."
-            delay={350}
-          />
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section id="how-it-works" className="py-20 px-6 md:px-12">
-        <div className="max-w-5xl mx-auto">
-          <FadeIn>
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 font-display">
-                Search in three steps
-              </h2>
-              <p className="text-gray-600 max-w-lg mx-auto">
-                Get started in minutes. Your emails indexed and searchable.
-              </p>
+       {/* Features Section */}
+      <section id="features" className="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-zinc-900 mb-8 text-center">
+            Everything locally.<br/>Nothing in the cloud.
+          </h2>
+          <p className="text-xl text-zinc-600 text-center max-w-3xl mx-auto mb-20">
+            Stop waiting for cloud sync. Search 100,000+ emails in milliseconds. 100% private, 0% latency.
+          </p>
+          
+          {/* Striking Feature Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-100 to-zinc-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-8 bg-white rounded-2xl border border-zinc-100">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                    <Database className="text-white" size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-zinc-900">01</div>
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-3">Local Storage</h3>
+                <p className="text-zinc-600 leading-relaxed">All data stays on your device. Optional local encryption. No cloud dependencies.</p>
+              </div>
             </div>
-          </FadeIn>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <Step
-              number="01"
-              title="Download & Install"
-              description="Download Zmemo for your platform."
-              delay={100}
-            />
-            <Step
-              number="02"
-              title="Import Your Emails"
-              description="Point Zmemo to your email directory."
-              delay={200}
-            />
-            <Step
-              number="03"
-              title="Search Instantly"
-              description="Start searching your entire archive."
-              delay={300}
-            />
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-100 to-zinc-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-8 bg-white rounded-2xl border border-zinc-100">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                    <Search className="text-white" size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-zinc-900">02</div>
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-3">Instant Search</h3>
+                <p className="text-zinc-600 leading-relaxed">Full-text search with filters. Find any email instantly. 30ms query time.</p>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-100 to-zinc-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-8 bg-white rounded-2xl border border-zinc-100">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                    <Shield className="text-white" size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-zinc-900">03</div>
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-3">Privacy First</h3>
+                <p className="text-zinc-600 leading-relaxed">Your data never leaves your device. Zero telemetry. Complete control.</p>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-zinc-100 to-zinc-200 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="relative p-8 bg-white rounded-2xl border border-zinc-100">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="w-12 h-12 bg-black rounded-xl flex items-center justify-center">
+                    <WifiOff className="text-white" size={24} />
+                  </div>
+                  <div className="text-3xl font-bold text-zinc-900">04</div>
+                </div>
+                <h3 className="text-2xl font-bold text-zinc-900 mb-3">Works Offline</h3>
+                <p className="text-zinc-600 leading-relaxed">No internet connection required. Perfect for flights, tunnels, and remote work.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -319,7 +320,7 @@ export const LandingPage: React.FC = () => {
           
           <FadeIn delay={100}>
             <p className="text-gray-600 mb-8 max-w-md mx-auto">
-              Free, open source, and always will be.
+              Free, will going to open source soon
             </p>
           </FadeIn>
 
@@ -333,13 +334,11 @@ export const LandingPage: React.FC = () => {
           <FadeIn delay={300}>
             <div className="flex flex-wrap justify-center items-center gap-6 mt-8 text-sm text-gray-500">
               <span className="flex items-center gap-1.5">
-                <CheckCircle size={14} /> Free forever
+                Free Limited 
               </span>
+              
               <span className="flex items-center gap-1.5">
-                <CheckCircle size={14} /> Open source
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle size={14} /> No account required
+                 No account required
               </span>
             </div>
           </FadeIn>
@@ -356,18 +355,11 @@ export const LandingPage: React.FC = () => {
               className="w-6 h-6 rounded object-contain"
             />
             <span className="text-sm font-medium text-gray-900">Zmemo</span>
-            <span className="text-gray-300">•</span>
-            <span className="text-sm text-gray-500">Open source</span>
-          </div>
+              </div>
 
-          <div className="flex items-center gap-6 text-sm text-gray-500">
-            <a href="#" className="hover:text-gray-900">GitHub</a>
-            <a href="#" className="hover:text-gray-900">Documentation</a>
-            <a href="#" className="hover:text-gray-900">License</a>
-          </div>
-
+          
           <div className="text-sm text-gray-500">
-            © 2024 Zmemo
+            © 2026 Zmemo
           </div>
         </div>
       </footer>
