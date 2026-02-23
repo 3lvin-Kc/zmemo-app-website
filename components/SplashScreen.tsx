@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Lock } from 'lucide-react';
 
 interface SplashScreenProps {
   onComplete: () => void;
@@ -14,8 +15,8 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
     const exitTimer = setTimeout(() => {
       setPhase('exiting');
-      setTimeout(onComplete, 1200);
-    }, 3000);
+      setTimeout(onComplete, 1000);
+    }, 2500);
 
     return () => {
       clearTimeout(enterTimer);
@@ -25,33 +26,34 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
   return (
     <div 
-      className={`fixed inset-0 z-[100] bg-white flex flex-col items-center justify-center overflow-hidden ${
+      className={`fixed inset-0 z-[100] bg-zinc-900 flex flex-col items-center justify-center overflow-hidden ${
         phase === 'entering' ? 'opacity-0' : phase === 'visible' ? 'opacity-100' : 'opacity-0'
       }`}
-      style={{ transition: 'opacity 0.8s ease-in-out' }}
+      style={{ transition: 'opacity 0.6s ease-in-out' }}
     >
       <div className="relative z-10 flex flex-col items-center">
         <div className="relative">
-          <div className="w-28 h-28 rounded-2xl flex items-center justify-center">
+          <div className="w-24 h-24 rounded-2xl bg-zinc-800 flex items-center justify-center border border-zinc-700">
             <img 
               src="/logo.png" 
               alt="Zmemo" 
-              className="w-20 h-20 object-contain"
+              className="w-16 h-16 object-contain"
             />
           </div>
         </div>
 
-        <div className="mt-10 text-center">
-          <h1 className="text-5xl font-bold text-gray-900 tracking-wider font-display">
+        <div className="mt-8 text-center">
+          <h1 className="text-4xl font-bold text-white tracking-wider">
             <span className="inline-block animate-[slideDown_0.4s_ease-out]">Z</span>
             <span className="inline-block animate-[slideDown_0.4s_ease-out_0.1s]">m</span>
             <span className="inline-block animate-[slideDown_0.4s_ease-out_0.2s]">e</span>
             <span className="inline-block animate-[slideDown_0.4s_ease-out_0.3s]">m</span>
             <span className="inline-block animate-[slideDown_0.4s_ease-out_0.4s]">o</span>
           </h1>
-          <p className="text-gray-500 text-sm mt-3 tracking-[0.4em] uppercase animate-[fadeIn_1s_ease-out_0.6s] opacity-0 font-medium" style={{ animationFillMode: 'forwards' }}>
-            Local Email Indexer
-          </p>
+          <div className="flex items-center justify-center gap-2 mt-3 text-zinc-500 text-xs tracking-[0.3em] uppercase animate-[fadeIn_1s_ease-out_0.6s] opacity-0 font-medium" style={{ animationFillMode: 'forwards' }}>
+            <Lock size={10} />
+            <span>Local Email Indexer</span>
+          </div>
         </div>
       </div>
 
@@ -60,7 +62,7 @@ export const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
           {[0, 1, 2].map((i) => (
             <div 
               key={i}
-              className="w-2.5 h-2.5 bg-gray-400 rounded-full animate-[bounce_1.4s_ease-in-out_infinite]"
+              className="w-2 h-2 bg-zinc-600 rounded-full animate-[bounce_1.4s_ease-in-out_infinite]"
               style={{ animationDelay: `${i * 0.2}s` }}
             />
           ))}
